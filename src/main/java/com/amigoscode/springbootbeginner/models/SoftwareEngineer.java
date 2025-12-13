@@ -1,9 +1,6 @@
 package com.amigoscode.springbootbeginner.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
@@ -18,4 +15,6 @@ public class SoftwareEngineer {
     private Integer id;
     private String name;
     private String techStack;
+    @Column(columnDefinition = "TEXT")
+    private String learningPathRecommendation;
 }

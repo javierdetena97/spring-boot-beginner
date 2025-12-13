@@ -42,6 +42,15 @@ public class SoftwareEngineerService {
         SoftwareEngineer softwareEngineer = softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + "not found"));
         softwareEngineer.setName(updatedEngineer.getName());
         softwareEngineer.setTechStack(updatedEngineer.getTechStack());
+        String prompt = """
+                Based on the programming tech stack %s that %s has given
+                Provide a full learning path and recommendations for this person.
+                """.formatted(
+                softwareEngineer.getTechStack(),
+                softwareEngineer.getName()
+        );
+        String chatResponse = aiService.chat(prompt);
+        softwareEngineer.setLearningPathRecommendation(chatResponse);
         softwareEngineerRepository.save(softwareEngineer);
     }
 

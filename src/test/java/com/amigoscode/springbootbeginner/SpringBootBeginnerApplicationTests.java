@@ -1,4 +1,4 @@
-package com.amigoscode.spring_boot_beginner;
+package com.amigoscode.springbootbeginner;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

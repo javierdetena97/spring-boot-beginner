@@ -1,0 +1,29 @@
+### Hello World
+GET http://localhost:8080
+
+### Get Software Engineers
+GET http://localhost:8080/api/v1/software-engineers
+
+### Get Software Engineer by ID
+GET http://localhost:8080/api/v1/software-engineers/1
+
+### Add Software Engineers
+POST http://localhost:8080/api/v1/software-engineers
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "techStack": "Java, Spring Boot, PostgreSQL"
+}
+
+### Update Software Engineers
+PUT http://localhost:8080/api/v1/software-engineers/1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "techStack": "TypeScript, Angular, Figma"
+}
+
+### Delete Software Engineer by ID
+DELETE http://localhost:8080/api/v1/software-engineers/4
